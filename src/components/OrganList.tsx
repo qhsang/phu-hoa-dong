@@ -16,7 +16,7 @@ export const OrganList = () => {
           {coQuan.map((organ) => (
             <HoverCard key={organ.id}>
               <HoverCardTrigger asChild>
-                <Card className="hover:shadow-elevation transition-all duration-300 border-2 hover:border-primary/20 cursor-pointer">
+                <Card className="hover:shadow-elevation transition-all duration-300 border-2 hover:border-primary/20 cursor-pointer h-full flex flex-col">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -29,7 +29,7 @@ export const OrganList = () => {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-2 text-sm">
                         <MapPin className="w-4 h-4 mt-0.5 text-muted-foreground flex-shrink-0" />
@@ -40,12 +40,14 @@ export const OrganList = () => {
                         <span className="font-mono text-foreground">{organ.soDienThoai}</span>
                       </div>
                     </div>
-                    <Link to={`/chi-tiet/${organ.id}`}>
-                      <Button className="w-full group">
-                        Xem chi tiết
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                    <div className="mt-auto pt-4">
+                      <Link to={`/chi-tiet/${organ.id}`}>
+                        <Button className="w-full group">
+                          Xem chi tiết
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
               </HoverCardTrigger>
